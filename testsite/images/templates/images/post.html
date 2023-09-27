@@ -1,0 +1,13 @@
+{% extends 'images/base.html' %}
+
+{% block content %}
+    <a href="{% url 'user' post.username %}"><img src="/media/{{ post.avatar }}" style="height: 70vh; width: 70vh; float: left;"></a>
+    <div style="float: left; margin-left: 5vh;">
+        <p style="font-size: 6vh;">Post id: {{ post.id }}
+        <br>User: {{ post.username }}</p>
+        <nav class="post_text">
+        <p style="font-size: 5vh">{{ post.post_text }}</p>
+        </nav>
+    </div>
+{% endblock content %}
+

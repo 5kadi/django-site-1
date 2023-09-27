@@ -1,0 +1,22 @@
+
+{% extends 'images/base.html' %}
+
+{% block content %}
+    <ul class="centralmenu">
+ 
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if field.label_tag is 'username' %}
+                    <p>test</p>
+                {% else %}
+                    <li style="float: right;"><label style="font-size: 5vh; color: red;">{{ field.label_tag }}<br>{{ field }}</label></li>
+                    <p class="flash_False">{{ field.errors }}</p>
+                {% endif %}
+            {% endfor %}
+            <li><p><input type="submit" value="Submit"></p></li>
+        </form>
+    </ul>
+{% endblock content %}
+
+

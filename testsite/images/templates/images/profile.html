@@ -1,0 +1,25 @@
+
+{% extends 'images/base.html' %}
+
+{% block content %}
+    <a href="{% url 'add_avatar' %}"><img style="height: 60vh; width: 60vh" src="/media/{{avatar}}"></a>
+    <div style="float: right; margin-right: 25vh;">
+        <p style="font-size: 6vh; display: inline-block;">User: {{ request.user.username }}</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p class="flash_False">{{ form.non_field_errors }}</p>
+            {% for field in form %}
+                <label style="font-size: 5vh; color: red; margin-left: -20vh; display: inline-block;">{{ field.label_tag }}<br>{{ field }}</label>
+                <p class="flash_False">{{ field.errors }}</p>
+            {% endfor %}
+            <p><input type="submit" value="Submit"></p>
+        </form>
+        <div style="margin-top: 40vh;">
+            <p style="font-size: 6vh;"><a href="{% url 'add_post' %}" style="color: blue">Create Post</a>
+            <a href="{% url 'log_out' %}" style="color: rgb(255, 0, 4); display: inline-block; margin-left: 40vh;">Log Out</a></p>
+        </div>
+    </div>
+{% endblock content %}
+
+
+

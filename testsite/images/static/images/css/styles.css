@@ -1,0 +1,168 @@
+html {
+  background-image: url("/static/images/images/bg_3.jpg");
+  height: 100%;
+  width: 100%;
+  background-color: aquamarine;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: 'Courier New';
+  
+}
+
+h1 {
+  color: blue;
+}
+
+p {
+  color: red;
+  font-size: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul.mainmenu {
+  list-style: none;
+  background: #000000;
+  height: 16vh;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 8vh;
+  overflow: hidden;
+}
+
+ul.mainmenu li {
+    float: left;
+    margin: 2vh 5vh 0 5vh;
+}
+
+ul.mainmenu li.last {
+  float: left;}
+
+
+ul.mainmenu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+ul.mainmenu li a:hover {
+  color: #FDA83D;
+}
+
+ul.centralmenu {
+  list-style: none;
+  margin: 0px 35vh 0 35vh;
+  size: cover;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul.centralmenu li {
+  margin: 5vh 3vh 0 10vh 
+}
+
+ul.centralmenu li p {
+  color:#ffffff;
+  text-decoration: none;
+  font-size: 5vh;
+  margin-left: 10vh;
+}
+ul.centralmenu li p.signup_title {
+  font-size: 5vh;
+  color: aqua;
+}
+ul.centralmenu li input {
+  font-size: 5vh;
+  color: #ff3030;
+  background-color: #ffffff;
+}
+ul.centralmenu li input[type="submit" i] {
+  font-size: 6vh;
+  margin-left: 35vh;
+}
+ul.centralmenu li input[type="checkbox" i] {
+  height: 3vh;
+  width: 3vh;
+}
+ul.centralmenu li input:hover {
+  background-color: #FDA83D;
+}
+ul.postmenu {
+  list-style: none;
+  margin: 0px 10vh 0px 30vh;
+  size: cover;
+  padding: 0;
+  color: #ffffff;
+  word-wrap: break-word;
+}
+ul.postmenu li {
+  background: #bebebe;
+  margin-top: 15px;
+  height: auto;
+}
+ul.postmenu li p {
+  color:#060606;
+  text-decoration: none;
+  font-size: 30px;
+}
+nav ul {
+  width: 180vh;
+  height: 55vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+nav.post_text {
+  width: 125vh;
+  height: 65vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+ul.paginate_menu {
+  font-size: 5vh;
+  margin-top: -10vh;
+  color:aqua;
+}
+ul.paginate_menu li {
+  float: left; 
+  font-size: 4vh; 
+  color: aqua; 
+  margin-left: 2vh;
+  margin-right: 2vh;
+}
+p.flash_True {
+  background-color: #979797;
+  color: rgb(88, 253, 66);
+  margin-left: 20vh;
+  font-size: 6vh;
+  margin-top: 2vh;
+  display: inline-block;
+}
+p.flash_False {
+  background-color: #979797;
+  color: rgb(239, 24, 24);
+  margin-left: 20vh;
+  font-size: 6vh;
+  margin-top: 2vh;
+  display: inline-block;
+}
+p.error_404 {
+  margin-top: 150px;
+  margin-left: 450px;
+  font-size: 100px;
+  color: #ff3030;
+  background-color: #686767;
+  display: inline-block;
+}
+
+div.content {
+    margin: 10px;
+}
+
+
+

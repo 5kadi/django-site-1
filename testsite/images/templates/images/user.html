@@ -1,0 +1,13 @@
+
+{% extends 'images/base.html' %}
+
+{% block content %}
+    <img style="height: 60vh; width: 60vh" src="/media/{{avatar}}">
+    <div style="float: right; margin-right: 15vh;">
+        <p style="font-size: 6vh; display: inline-block;">User: {{ user.username }}</p>
+        <br>
+        <nav class="post_text">
+            <p style="font-size: 5vh">{{ bio }}</p>
+        </nav>
+    </div>
+{% endblock content %}

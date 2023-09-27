@@ -1,0 +1,47 @@
+{% load static %}
+{% load images_tags %}
+{% load cache %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link type="text/css" href="{% static 'images/css/styles.css' %}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% block menu %}
+            <ul class="mainmenu">
+                {% get_menu as menu %}
+                {% for m in menu %}
+                    {% if menu_selected == m.pk %}
+                        <li><a style="color: aqua;">{{ m.name }}</a></li>
+                    {% else %}
+                        <li><a href="{% url m.link %}">{{ m.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <div style="float: right; font-size: 6vh;">
+                    {% if request.user.is_authenticated %}
+                        {% if menu_selected == 3%}
+                            <li><a style="color: aqua;">{{user}}</a></li>
+                        {% else %}
+                            <li><a href="{% url 'profile' %}">{{user}}</a></li>
+                        {% endif %}
+                    {% else %}
+                        {% if menu_selected == 4%}
+                            <li><a style="color: aqua;">Log In</a></li>
+                        {% else %}
+                            <li><a href="{% url 'log_in' %}">Log In</a>
+                        {% endif %}
+                        {% if menu_selected == 5%}
+                            <li><a style="color: aqua;">Sign Up</a></li>
+                        {% else %}
+                            <li><a href="{% url 'sign_up' %}">Sign Up</a></li>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </ul>
+        {% endblock menu %}
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

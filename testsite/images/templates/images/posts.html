@@ -1,0 +1,41 @@
+
+{% extends 'images/base.html' %}
+
+{% block content %}
+    <nav>
+        <ul class="postmenu" style="margin-left: 10vh; margin-right: 10vh;">
+            {% for post in posts %}
+                {% if post %}
+                    <li>
+                        <a href="{% url 'user' post.username %}"><img style="margin-bottom: -73px; width: 90px; height: 90px" src="/media/{{ post.avatar }}"></a>
+                        <a href="{{ post.get_absolute_url }}" style="text-decoration: none;">
+                        <p style="margin-left: 100px;">User: {{ post.username }}
+                        <br>{{ post.post_text }}</p></a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+    <ul class="mainmenu" style="background: transparent; margin-top: 10vh; margin-left: 35vh;">
+        <li>
+            {% if page_obj.has_previous %}
+                <p style="font-size: 4vh;"><a href="?page={{page_obj.previous_page_number}}">Previous page</a></p>
+            {% else %}
+                <p style="font-size: 4vh;">Previous page</p>
+            {% endif %}
+        </li>
+        <li>
+            <p style="color: aliceblue; font-size: 4vh;">Page {{page_obj.number}} of {{paginator.num_pages}}</p>
+        </li>
+        <li>
+            {% if page_obj.has_next %}
+                <p style="font-size: 4vh;"><a href="?page={{page_obj.next_page_number}}">Next page</a></p>
+            {% else %}
+                <p style="font-size: 4vh;">Next page</p>
+            {% endif %}
+        </li>
+    </ul>
+
+{% endblock content %}
+
+           

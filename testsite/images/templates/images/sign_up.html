@@ -1,0 +1,16 @@
+
+{% extends 'images/base.html' %}
+
+{% block content %}
+    <ul class="centralmenu">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p class="flash_False">{{ form.non_field_errors }}</p>
+            {% for field in form %}
+                <li style="margin-left: 30vh;"><label style="font-size: 5vh; color: red;">{{ field.label_tag }}<br>{{ field }}</label></li>
+                <p class="flash_False">{{ field.errors }}</p>
+            {% endfor %}
+            <li><p><input type="submit" value="Submit"></p></li>
+        </form>
+    </ul>
+{% endblock content %}
